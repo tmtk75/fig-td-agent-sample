@@ -16,3 +16,12 @@ recv:
   volumes:
   - ./recv.conf:/etc/td-agent
   - ./out:/log
+
+nginx:
+  image: nginx
+  volumes:
+  - ./nginx:/etc/nginx
+  - .:/usr/share/nginx/html
+  - ./nginx:/var/log/nginx
+  ports:
+  - "8080:80"
