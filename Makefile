@@ -15,3 +15,6 @@ tcp:
 
 ps:
 	docker-compose ps
+
+es-get:
+	curl `docker-machine ip docker-vm`:9200

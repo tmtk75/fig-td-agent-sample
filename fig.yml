@@ -26,3 +26,11 @@ nginx:
   - ./nginx:/var/log/nginx
   ports:
   - "8080:80"
+
+es:
+  image: elasticsearch
+  volumes:
+  - ./es:/usr/share/elasticsearch/config
+  ports:
+  - "9200:9200"
+  - "9300:9300"
