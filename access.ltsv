@@ -1,0 +1,4 @@
+time:2015-09-26T17:26:33	status:200	size:135	method:GET	path:/
+time:2015-09-26T18:36:34	status:201	size:2254	method:POST	path:/apps
+time:2015-09-26T18:56:32	status:401	size:10	method:POST	path:/
+time:2015-09-26T19:56:49	status:500	size:100	method:PUT	path:/foo/bar
