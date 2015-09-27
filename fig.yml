@@ -4,11 +4,9 @@ send:
   - ./send.conf:/etc/td-agent
   - ./in:/log
   - ./nginx:/var/log/nginx
-
   ports:
   - "24224:24224"
   - "13337:13337"
-
   links:
   - recv:recv
 
@@ -17,6 +15,8 @@ recv:
   volumes:
   - ./recv.conf:/etc/td-agent
   - ./out:/log
+  links:
+  - es:es
 
 nginx:
   image: nginx

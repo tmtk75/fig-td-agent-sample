@@ -19,5 +19,8 @@ ps:
 es-get:
 	curl `docker-machine ip docker-vm`:9200
 
+es-head:
+	open http://`docker-machine ip docker-vm`:9200/_plugin/head
+
 kibana:
 	open http://`docker-machine ip docker-vm`:5601
