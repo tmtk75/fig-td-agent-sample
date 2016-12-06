@@ -1,0 +1,3 @@
+time:2016-12-06T13:11:36.456Z	elapsed:02:01:03	sql:update
+time:2016-12-06T14:11:34.123Z	elapsed:00:00:05	sql:commit
+time:2016-12-06T14:12:36.456Z	elapsed:00:01:03	sql:insert

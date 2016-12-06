@@ -1,3 +1,4 @@
+require 'fluent/formatter'
 module Fluent
   class TextParser
     ## Name of parser plugin

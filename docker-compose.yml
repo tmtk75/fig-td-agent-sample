@@ -28,8 +28,7 @@ nginx:
   - "8080:80"
 
 es:
-  build: ./es
-  #image: elasticsearch
+  image: elasticsearch
   volumes:
   - ./es:/usr/share/elasticsearch/config
   ports:

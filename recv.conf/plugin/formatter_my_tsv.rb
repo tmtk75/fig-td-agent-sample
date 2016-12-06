@@ -1,4 +1,5 @@
 # myplugin/formatter_tsv.rb
+require 'fluent/formatter'
 module Fluent
   module TextFormatter
     class TSVFormatter < Formatter

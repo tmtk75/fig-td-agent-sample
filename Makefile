@@ -4,23 +4,14 @@ json:
 	  sleep 1; \
 	done
 
-ltsv:
+access:
 	cat access.ltsv >> in/access.log
 
-curl:
-	curl `docker-machine ip docker-vm`:8080/README.md
+slow:
+	cat slow.ltsv >> in/access.log
 
-tcp:
-	nc `docker-machine ip docker-vm` 13337 < access.ltsv
-
-ps:
-	docker-compose ps
-
-es-get:
-	curl `docker-machine ip docker-vm`:9200
-
-es-head:
-	open http://`docker-machine ip docker-vm`:9200/_plugin/head
+http:
+	curl localhost:8080/Makefile
 
 kibana:
-	open http://`docker-machine ip docker-vm`:5601
+	open http://localhost:5601
