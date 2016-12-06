@@ -29,3 +29,13 @@ Open three terminals like [1], [2] and [3].
        v                                         v
 out/accesss.log-*                              http://es:9200/
 ```
+
+##
+```
+[0]$ docker-compose up
+...
+
+[1]$ make slow
+...
+[1]$ open http://localhost:5601
+```
