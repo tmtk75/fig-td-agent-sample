@@ -12,6 +12,8 @@ slow:
 
 http:
 	curl localhost:8080/Makefile
+	curl localhost:8080/docker-compose.yml
+	curl localhost:8080/missing
 
 kibana:
 	open http://localhost:5601

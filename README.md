@@ -35,7 +35,7 @@ out/accesss.log-*                              http://es:9200/
 [0]$ docker-compose up
 ...
 
-[1]$ make slow
+[1]$ make access slow http
 ...
 [1]$ open http://localhost:5601
 ```

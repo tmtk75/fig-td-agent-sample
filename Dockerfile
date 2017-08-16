@@ -1,9 +1,18 @@
 FROM centos:7
 MAINTAINER Tomotaka Sakuma
 
-ADD td-agent.repo /etc/yum.repos.d/td-agent.repo
-RUN rpm --import http://packages.treasuredata.com/GPG-KEY-td-agent; \
-    yum -y install td-agent-2.3.0 && yum clean all
+RUN rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent
+
+RUN echo > /etc/yum.repos.d/td.repo
+RUN echo "[treasuredata]"    >> /etc/yum.repos.d/td.repo
+RUN echo "name=TreasureData" >> /etc/yum.repos.d/td.repo
+RUN echo "baseurl=http://packages.treasuredata.com/2/redhat/\$releasever/\$basearch" >> /etc/yum.repos.d/td.repo
+RUN echo "gpgcheck=1" >> /etc/yum.repos.d/td.repo
+RUN echo "gpgkey=https://packages.treasuredata.com/GPG-KEY-td-agent" >> /etc/yum.repos.d/td.repo
+
+RUN yum check-update | echo ; echo $?
+RUN  yes | yum install -y td-agent
+
 RUN /usr/sbin/td-agent-gem install fluent-plugin-elasticsearch
 
 ENTRYPOINT ["td-agent"]
